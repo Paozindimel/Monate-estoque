@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav th:fragment="navbar" class="navbar navbar-expand-lg monate-navbar">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" th:href="@{/}">
+            <span class="brand-mark">M</span>
+            <span>
+                <strong>Monate Estoque</strong>
+                <small class="d-block brand-tagline">Organização que rende</small>
+            </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMonate" aria-label="Abrir menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMonate">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" th:href="@{/}">Painel</a>
+                <a class="nav-link" th:href="@{/produtos}">Produtos</a>
+                <a class="btn btn-monate ms-lg-3 mt-2 mt-lg-0" th:href="@{/produtos/novo}">+ Novo produto</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<footer th:fragment="footer" class="footer-monate">
+    <div class="container d-flex flex-column flex-sm-row justify-content-between gap-2">
+        <span>Monate Estoque</span>
+        <span>Controle simples, negócio organizado.</span>
+    </div>
+</footer>
+</body>
+</html>
