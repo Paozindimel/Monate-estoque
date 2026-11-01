@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 
@@ -16,23 +17,16 @@
 <div th:replace="~{fragments/layout :: navbar}"></div>
 
 <div class="main-content">
-
-    <main class="container-fluid page-wrap form-page">
+    <main class="page-wrap form-page">
 
         <a class="back-link" th:href="@{/produtos}">
             ← Voltar para produtos
         </a>
 
         <div class="form-heading">
-
-            <p class="eyebrow">INFORMAÇÕES DO PRODUTO</p>
-
+            <p class="eyebrow">GERENCIAMENTO</p>
             <h1 th:text="${titulo}">Novo produto</h1>
-
-            <p class="subtitle">
-                Preencha os campos abaixo para manter seu estoque atualizado.
-            </p>
-
+            <p class="subtitle">Preencha as informações para cadastrar seu produto.</p>
         </div>
 
         <section class="content-card form-card">
@@ -40,14 +34,11 @@
             <form th:object="${form}" th:action="${acao}" method="post">
 
                 <div class="mb-4">
-
-                    <label for="nome" class="form-label">
-                        Nome do produto
-                    </label>
+                    <label for="nome" class="form-label">Nome do produto</label>
 
                     <input id="nome"
                            type="text"
-                           class="form-control form-control-lg"
+                           class="form-control"
                            th:field="*{nome}"
                            placeholder="Ex.: Brownie tradicional"
                            maxlength="80"
@@ -55,17 +46,11 @@
 
                     <div class="field-error"
                          th:if="${#fields.hasErrors('nome')}"
-                         th:errors="*{nome}">
-                        Erro no nome
-                    </div>
-
+                         th:errors="*{nome}">Erro no nome</div>
                 </div>
 
                 <div class="mb-4">
-
-                    <label for="categoria" class="form-label">
-                        Categoria
-                    </label>
+                    <label for="categoria" class="form-label">Categoria</label>
 
                     <input id="categoria"
                            type="text"
@@ -77,19 +62,13 @@
 
                     <div class="field-error"
                          th:if="${#fields.hasErrors('categoria')}"
-                         th:errors="*{categoria}">
-                        Erro na categoria
-                    </div>
-
+                         th:errors="*{categoria}">Erro na categoria</div>
                 </div>
 
                 <div class="row g-3 mb-4">
 
                     <div class="col-md-6">
-
-                        <label for="preco" class="form-label">
-                            Preço de venda (R$)
-                        </label>
+                        <label for="preco" class="form-label">Preço de venda (R$)</label>
 
                         <input id="preco"
                                type="number"
@@ -102,17 +81,11 @@
 
                         <div class="field-error"
                              th:if="${#fields.hasErrors('preco')}"
-                             th:errors="*{preco}">
-                            Erro no preço
-                        </div>
-
+                             th:errors="*{preco}">Erro no preço</div>
                     </div>
 
                     <div class="col-md-6">
-
-                        <label for="estoque" class="form-label">
-                            Quantidade em estoque
-                        </label>
+                        <label for="estoque" class="form-label">Quantidade em estoque</label>
 
                         <input id="estoque"
                                type="number"
@@ -123,22 +96,16 @@
                                placeholder="0"
                                required>
 
-                        <div class="form-hint">
-                            Use 0 quando o produto estiver esgotado.
-                        </div>
+                        <div class="form-hint">Use 0 quando o produto estiver esgotado.</div>
 
                         <div class="field-error"
                              th:if="${#fields.hasErrors('estoque')}"
-                             th:errors="*{estoque}">
-                            Erro no estoque
-                        </div>
-
+                             th:errors="*{estoque}">Erro no estoque</div>
                     </div>
 
                 </div>
 
                 <div class="form-footer">
-
                     <a class="btn btn-light-outline" th:href="@{/produtos}">
                         Cancelar
                     </a>
@@ -146,7 +113,6 @@
                     <button class="btn btn-monate" type="submit">
                         Salvar produto
                     </button>
-
                 </div>
 
             </form>
@@ -156,10 +122,10 @@
     </main>
 
     <div th:replace="~{fragments/layout :: footer}"></div>
-
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
+```
