@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <body>
-<nav th:fragment="navbar" class="navbar navbar-expand-lg monate-navbar">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" th:href="@{/}">
-            <span class="brand-mark">M</span>
-            <span>
-                <strong>Monate Estoque</strong>
-                <small class="d-block brand-tagline">Organização que rende</small>
-            </span>
+
+<aside th:fragment="navbar" class="monate-sidebar">
+
+    <a class="sidebar-brand" th:href="@{/}">
+        <span class="brand-mark">M</span>
+
+        <span>
+            <strong class="brand-name">Monate Estoque</strong>
+            <small class="brand-tagline">Organização que rende</small>
+        </span>
+    </a>
+
+    <p class="sidebar-label">Menu principal</p>
+
+    <nav class="sidebar-nav" aria-label="Menu principal">
+
+        <a class="sidebar-link" th:href="@{/}">
+            <span class="sidebar-icon">⌂</span>
+            <span>Painel</span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMonate" aria-label="Abrir menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navMonate">
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link" th:href="@{/}">Painel</a>
-                <a class="nav-link" th:href="@{/produtos}">Produtos</a>
-                <a class="btn btn-monate ms-lg-3 mt-2 mt-lg-0" th:href="@{/produtos/novo}">+ Novo produto</a>
-            </div>
-        </div>
+
+        <a class="sidebar-link" th:href="@{/produtos}">
+            <span class="sidebar-icon">▤</span>
+            <span>Produtos</span>
+        </a>
+
+        <a class="sidebar-link" th:href="@{/produtos/novo}">
+            <span class="sidebar-icon">＋</span>
+            <span>Novo produto</span>
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+        <strong>Monate Estoque</strong><br>
+        Controle simples, negócio organizado.
     </div>
-</nav>
+
+</aside>
+
 <footer th:fragment="footer" class="footer-monate">
-    <div class="container d-flex flex-column flex-sm-row justify-content-between gap-2">
-        <span>Monate Estoque</span>
-        <span>Controle simples, negócio organizado.</span>
-    </div>
+    <span>Monate Estoque · Controle de estoque</span>
 </footer>
+
 </body>
 </html>
